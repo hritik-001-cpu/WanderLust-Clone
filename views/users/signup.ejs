@@ -1,0 +1,40 @@
+<% layout('/layouts/boilerplate') %>
+
+  <div class="login-wrapper">
+    <div class="login-card">
+      <input type="checkbox" id="reg-toggle" class="reg-toggle" style="display: none;" />
+      <div class="glow-blob blob-1"></div>
+      <div class="glow-blob blob-2"></div>
+      <div class="dark-overlay"></div>
+      <div class="view-container">
+        <div class="form-view" id="signup-view">
+          <div class="header mt-3">
+            <div class="decorative-dot"></div>
+            <div class="title">Create Account on WanderLust</div>
+            <p class="subtitle">Join us to get started.</p>
+          </div>
+
+          <form action="/signup" method="POST">
+            <div class="input-group">
+              <input type="text" name="username" class="input-field" placeholder="Full Name" required=""
+                autocomplete="name" />
+            </div>
+
+            <div class="input-group">
+              <input type="email" name="email" class="input-field" placeholder="Email address" required=""
+                autocomplete="email" />
+            </div>
+
+            <div class="input-group">
+              <input type="password" name="password" class="input-field" placeholder="Password" required=""
+                autocomplete="new-password" />
+            </div>
+
+            <div style="height: 12px;"></div>
+
+            <button type="submit" class="btn-submit">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

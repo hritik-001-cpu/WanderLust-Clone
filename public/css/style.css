@@ -1,0 +1,245 @@
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.show-img{
+  height: 30vh;
+  border-radius: 1rem;
+  object-fit: cover;
+  object-position: center;
+  
+}
+.container{
+  flex: 1;
+}
+.navbar{
+  height: 5rem;
+  background-color: white;
+}
+.fa-airbnb{
+  font-size: 2rem;
+  color: #fe424d;
+  padding: 1rem;
+}
+.nav-link{
+  color: #222222 !important;
+}
+.f-info-links a{
+  text-decoration: none;
+  color: #222222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info-social,.f-info-links,.f-info-brand{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-social i{
+    padding: 1rem;
+}
+.f-info{
+  height: 9rem;
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-evenly;
+  background-color: #ebebeb;
+}
+.btns{
+  display: flex;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.btn{
+  margin-right: 1rem;
+  margin-top: 0.2rem;
+}
+
+.card {
+  width: 230px;
+  border-radius: 20px;
+  background: #1b233d;
+  padding: 5px;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+
+}
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.card {
+  width: 100%;
+  max-width: 400px;
+  min-height: 450px;
+  margin: 0 auto;
+  border-radius: 2rem !important;
+  background: #1b233d;
+  padding: 5px;
+  overflow: hidden;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 20px 0px;
+  transition:
+    transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: block;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+.card .top-section img {
+  position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    
+}
+.description{
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: cursive;
+}
+.card .top-section {
+  height: 14rem;
+  border-radius: 20px 20px 0 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(45deg, rgb(4, 159, 187) 0%, rgb(80, 246, 255) 100%);
+  position: relative;
+}
+
+.card .top-section .border {
+  border-bottom-right-radius: 10px;
+  height: 2.5rem;
+  width: 130px;
+  background: white;
+  background: #1b233d;
+  position: absolute;
+  top: 0;
+    left: 0;
+    z-index: 5;
+  transform: skew(-40deg);
+  box-shadow: -10px -10px 0 0 #1b233d;
+}
+
+.card .top-section .border::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 0;
+  right: -15px;
+  background: rgba(255, 255, 255, 0);
+  border-top-left-radius: 10px;
+  box-shadow: -5px -5px 0 2px #1b233d;
+}
+
+.card .top-section::before {
+  content: "";
+  position: absolute;
+  z-index: 5;
+  top: 30px;
+  left: 0;
+  background: rgba(255, 255, 255, 0);
+  height: 15px;
+  width: 15px;
+  border-top-left-radius: 15px;
+  box-shadow: -5px -5px 0 2px #1b233d;
+}
+
+.card .top-section .icons {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.card .top-section .icons .logo {
+  height: 100%;
+  aspect-ratio: 1;
+  padding: 7px 0 7px 15px;
+}
+
+.card .top-section .icons .logo .top-section {
+  height: 100%;
+}
+
+.card .top-section .icons .social-media {
+  height: 100%;
+  padding: 8px 15px;
+  display: flex;
+  gap: 7px;
+  margin-left: auto;
+  justify-content: flex-end;
+}
+
+.card .top-section .icons .social-media .svg {
+  height: 100%;
+  fill: #1b233d;
+}
+
+.card .top-section .icons .social-media .svg:hover {
+  fill: white;
+}
+
+.card .bottom-section {
+  margin-top: 1.5rem;
+  padding: 10px 5px;
+}
+
+.card .bottom-section .title {
+  display: block;
+  font-size: 17px;
+  font-weight: bolder;
+  color: black;
+  text-align: center;
+  letter-spacing: 2px;
+}
+
+.card .bottom-section .row {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.card .bottom-section .row .item {
+  flex: 30%;
+  text-align: center;
+  padding: 5px;
+  color: black;
+  font-weight: 700;
+}
+
+.card .bottom-section .row .item .big-text {
+  font-size: 12px;
+  display: block;
+}
+
+.card .bottom-section .row .item .regular-text {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.card .bottom-section .row .item:nth-child(2) {
+  border-left: 1px solid rgba(255, 255, 255, 0.126);
+  border-right: 1px solid rgba(255, 255, 255, 0.126);
+}
+.listing-link{
+  text-decoration: none;
+}

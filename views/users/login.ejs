@@ -1,0 +1,51 @@
+<% layout('/layouts/boilerplate') %>
+
+<div class="login-wrapper">
+  <div class="login-card">
+    <input
+      type="checkbox"
+      id="reg-toggle"
+      class="reg-toggle"
+      style="display: none"
+    />
+    <div class="glow-blob blob-1"></div>
+    <div class="glow-blob blob-2"></div>
+    <div class="dark-overlay"></div>
+    <div class="view-container">
+      <div class="form-view" id="login-view">
+        <div class="header mt-3">
+          <div class="decorative-dot"></div>
+          <div class="title">Welcome Back</div>
+          <p class="subtitle">Please enter your details to login in.</p>
+        </div>
+        <form method="POST" action="/login">
+          <div class="input-group">
+            <input
+              type="text"
+              name="username"
+              class="input-field"
+              placeholder="Username"
+              required
+              autocomplete="username"
+            />
+          </div>
+
+          <div class="input-group mt-2">
+            <input
+              type="password"
+              name="password"
+              class="input-field"
+              placeholder="Password"
+              required
+              autocomplete="current-password"
+            />
+          </div>
+
+          <a href="#" class="forgot-link">Forgot password?</a>
+
+          <button type="submit" class="btn-submit mt-3">Login In</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
