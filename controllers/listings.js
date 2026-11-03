@@ -26,7 +26,10 @@ module.exports.showListing = async (req, res) => {
 };
 
 module.exports.createListing = async (req, res) => {
-
+    console.log("🔥 CREATE LISTING ROUTE HIT");
+    console.log("Listing Data:", req.body.listing);
+    console.log("User:", req.user?._id);
+    console.log("Map Token Available:", !!process.env.MAP_TOKEN);
     const response = await geocodingClient
         .forwardGeocode({
             query: req.body.listing.location,
