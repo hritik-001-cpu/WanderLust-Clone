@@ -30,15 +30,31 @@ module.exports.createListing = async (req, res) => {
     console.log("Listing Data:", req.body.listing);
     console.log("User:", req.user?._id);
     console.log("Map Token Available:", !!process.env.MAP_TOKEN);
-    const response = await geocodingClient
-        .forwardGeocode({
-            query: req.body.listing.location,
-            limit: 1,
-        })
-        .send();
 
-    console.log("Mapbox location:", req.body.listing.location);
-    console.log("Mapbox features:", response.body.features);
+    console.log("Starting Mapbox geocoding...");
+    console.log("Token prefix:", process.env.MAP_TOKEN?.slice(0, 3));
+
+    let response;
+
+    try {
+        response = await geocodingClient
+            .forwardGeocode({
+                query: req.body.listing.location,
+                limit: 1,
+            })
+            .send();
+
+        console.log("Mapbox API Status: Success");
+        console.log("Mapbox Features:", response.body.features);
+
+    } catch (err) {
+        console.log("MAPBOX ERROR MESSAGE:", err.message);
+        console.log("MAPBOX STATUS:", err.statusCode || err.response?.status);
+        console.log("MAPBOX ERROR BODY:", err.body || err.response?.body);
+
+        req.flash("error", "Mapbox geocoding failed.");
+        return res.redirect("/listings/new");
+    }
 
     if (!response.body.features.length) {
         req.flash("error", "Invalid location. Please enter a valid location.");
