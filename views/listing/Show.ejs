@@ -1,9 +1,15 @@
 <% layout('/layouts/boilerplate') %>
+<% layout('/layouts/boilerplate') %>
+
 <script>
-  const mapToken = "<%= mapToken %>";
-  const coordinates = <%- JSON.stringify(
-    listing.geometry?.coordinates || null
-  ) %>;
+    const mapToken = <%- JSON.stringify(mapToken || "") %>;
+
+    const coordinates = <%- JSON.stringify(
+        listing.geometry?.coordinates || []
+    ) %>;
+
+    console.log("Map token:", mapToken ? "Available" : "Missing");
+    console.log("Listing coordinates:", coordinates);
 </script>
   <div class="row">
     <div class="col-8 offset-2 mt-3">
@@ -73,7 +79,6 @@
                   </path>
                 </svg>
               </label>
-
               <input id="rating-1" type="radio" name="review[rating]" value="1" />
               <label for="rating-1" title="1 star">
                 <svg viewBox="0 0 576 512" height="1em" xmlns="http://www.w3.org/2000/svg">
